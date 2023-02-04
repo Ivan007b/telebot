@@ -1,0 +1,561 @@
+#1
+from typing import List
+
+
+def func(a):
+       if len(a) == len(set(a)):
+              return (True)
+       else:
+              return (False)
+print(func([1, 2, 3, 4, 10, 100]))
+print(func([1, 2, 3, 4, 4]))
+#2
+set1={'a','e','i','u','o'}
+print(set1)
+#3
+def function(integer_l):
+
+  position = 3 - 1
+  idx = 0
+  len_l = (len(integer_l))
+  while len_l>0:
+    idx = (position+idx)%len_l
+    print(integer_l.pop(idx))
+    len_l -= 1
+nums = [10,20,30,40,50,60,70,80,90]
+(nums)
+#4
+a = [1, -2, 3, -4, 5, -6, 7, -8, 9, -10]
+if sum (a[0:2])==0:
+    print("result is ==0")
+elif sum (a[1:3])==0:
+    print("result is ==0")
+elif sum (a[2:4])==0:
+    print("result is ==0")
+elif sum (a[3:5])==0:
+    print("result is ==0")
+elif sum (a[4:6])==0:
+    print("result is ==0")
+elif sum (a[5:7])==0:
+    print("result is ==0")
+elif sum (a[6:8])==0:
+    print("result is ==0")
+elif sum (a[7:9])==0:
+    print("result is ==0")
+else:
+    print("result is not ==0")
+#5
+numbers = []
+for num in range(1000):
+  num=str(num).zfill(3)
+print(num)
+numbers.append(num)
+#6
+string_words = '''United States Declaration of Independence
+From Wikipedia, the free encyclopedia
+The United States Declaration of Independence is the statement
+adopted by the Second Continental Congress meeting at the Pennsylvania State
+House (Independence Hall) in Philadelphia on July 4, 1776, which announced
+that the thirteen American colonies, then at war with the Kingdom of Great
+Britain, regarded themselves as thirteen independent sovereign states, no longer
+under British rule. These states would found a new nation – the United States of
+America. John Adams was a leader in pushing for independence, which was passed
+on July 2 with no opposing vote cast. A committee of five had already drafted the
+formal declaration, to be ready when Congress voted on independence.'''
+word_list = string_words.split()
+
+word_freq = [word_list.count(n) for n in word_list]
+
+print("String:\n {} \n".format(string_words))
+print("List:\n {} \n".format(str(word_list)))
+print("Pairs (Words and Frequencies:\n {}".format(str(list(zip(word_list, word_freq)))))
+#7
+import collections
+import pprint
+file_input = input('File Name: ')
+with open(file_input) as info:
+  count = collections.Counter(info.read().upper())
+  value = pprint.pformat(count)
+print(value)
+#8
+
+#9
+import pkg_resources
+installed_packages = pkg_resources.working_set
+installed_packages_list = sorted(["%s==%s" % (i.key, i.version)
+     for i in installed_packages])
+for m in installed_packages_list:
+    print(m)
+#10
+
+os_profile = [
+        'architecture',
+        'linux_distribution',
+        'mac_ver',
+        'machine',
+        'node',
+        'platform',
+        'processor',
+        'python_build',
+        'python_compiler',
+        'python_version',
+        'release',
+        'system',
+        'uname',
+        'version',
+    ]
+for key in os_profile:
+  if hasattr(vars, key):
+    print(key + str(getattr(vars, key)()))
+#11
+X = [10, 20, 20, 20]
+Y = [10, 20, 30, 40]
+Z = [10, 30, 40, 20]
+if sum(X)==70:
+    print(True)
+else:
+    print(False)
+if sum(Y)==70:
+    print(True)
+else:
+    print(False)
+if sum(Z)==70:
+    print(True)
+else:
+    print(False)
+#12
+def function1(nums):
+  result_function = []
+  for a in nums:
+    new_function = []
+    for function in result_function:
+      for i in range(len(function)+1):
+        new_function.append(function[:i] + [a] + function[i:])
+        result_function = new_function
+  return result_function
+
+my_nums = [1,2,3]
+print("Original Collection: ",my_nums)
+print("Collection of distinct numbers:\n",function(my_nums))
+
+#13
+def letter_combinations(digits):
+    if digits == "":
+        return []
+    string_maps = {
+        "1": "abc",
+        "2": "def",
+        "3": "ghi",
+        "4": "jkl",
+        "5": "mno",
+        "6": "pqrs",
+        "7": "tuv",
+        "8": "wxy",
+        "9": "z"
+    }
+    result = [""]
+    for num in digits:
+        temp = []
+        for an in result:
+            for char in string_maps[num]:
+                temp.append(an + char)
+        result = temp
+    return result
+
+
+digit_string = "47"
+print(letter_combinations(digit_string))
+digit_string = "29"
+print(letter_combinations(digit_string))
+
+#14
+def function_withoutplus(a, b):
+    while b != 0:
+        data = a&b
+        a = a^b
+        b = data<<1
+    return a
+print(function_withoutplus(2, 10))
+print(function_withoutplus(-20, 10))
+print(function_withoutplus(-10, -20))
+#15
+from collections import deque
+import resourse
+
+__operators__ = "+-/*"
+__parenthesis__ = "()"
+__priority__ = {
+    '+': 0,
+    '-': 0,
+    '*': 1,
+    '/': 1,
+}
+#15
+def test_higher_priority(operator1, operator2):
+    return __priority__[operator1] >= __priority__[operator2]
+
+print(test_higher_priority('*','-'))
+print(test_higher_priority('+','-'))
+print(test_higher_priority('+','*'))
+print(test_higher_priority('+','/'))
+print(test_higher_priority('*','/'))
+#16
+def pythagoras(side1, side2, hypotenuse):
+    if side1 == str("x"):
+        return ("Side1 = " + str(((hypotenuse ** 2) - (side2 ** 2)) ** 0.5))
+    elif side2 == str("x"):
+        return ("Side2 = " + str(((hypotenuse ** 2) - (side1 ** 2)) ** 0.5))
+    elif hypotenuse == str("x"):
+        return ("Hypotenuse = " + str(((side1 ** 2) + (side2 ** 2)) ** 0.5))
+    else:
+        return " answer"
+print(pythagoras(3,4,'x'))
+print(pythagoras(3,'x',5))
+print(pythagoras('x',4,5))
+print(pythagoras(3,4,5))
+#17
+def gen_strobogrammaticNUMBER(n):
+    result = helper(n, n)
+    return result
+
+
+def helper(n, length):
+    if n == 0:
+        return [""]
+    if n == 1:
+        return ["3", "5", "1"]
+    middles = helper(n-2, length)
+    result = []
+    for middle in middles:
+        if n != length:
+            result.append("0" + middle + "0")
+        result.append("8" + middle + "8")
+        result.append("1" + middle + "1")
+        result.append("9" + middle + "6")
+        result.append("6" + middle + "9")
+    return result
+
+print("n = 2: \n",gen_strobogrammaticNUMBER(2))
+print("n = 3: \n",gen_strobogrammaticNUMBER(3))
+print("n = 4: \n",gen_strobogrammaticNUMBER(4))
+
+#18
+pythonic_machines_heights = [181, 187, 196, 196, 198, 203, 207, 211, 215]
+
+after_retirement = [181, 187, 196, 198, 203, 207, 211, 215]
+
+
+def median(dataset):
+    data = sorted(dataset)
+    index = len(data) // 2
+
+    # If the dataset is odd
+    if len(dataset) % 2 != 0:
+        return data[index]
+
+    # If the dataset is even
+    return (data[index - 1] + data[index]) / 2
+print(median(pythonic_machines_heights))
+print(median(after_retirement))
+#19
+def func2(num):
+    ans = True
+    n, tempn, i = 2, 2, 2
+    while ans:
+        if str(tempn) in num:
+            i += 1
+            tempn = pow(n, i)
+        else:
+            ans = False
+    return i - 1;
+
+
+print(func2("2481632"))
+print(func2("248163264"))
+#20
+def factorialzero(n):
+    x = n // 5
+    y = x
+    while x > 0:
+        x /= 5
+        y += int(x)
+    return y
+
+
+print(factorialzero(5))
+print(factorialzero(12))
+print(factorialzero(100))
+#21
+def notes(a):
+    Q = [500, 200, 100, 50, 20, 10]
+    x = 0
+    for i in range(6):
+        q = Q[i]
+        x += int(a / q)
+        a = int(a % q)
+    if a > 0:
+        x = -1
+    return x
+
+
+print(notes(880))
+#22
+def new_seq(n):
+    if n==1 or n==2 or n==3 or n==4:
+        return 1
+    return new_seq(n-1) + new_seq(n-2) + new_seq(n-3) + new_seq(n-4)
+print(new_seq(5))
+print(new_seq(6))
+print(new_seq(7))
+#23
+def func3(n):
+  n_str = str(n)
+  while (n > 0):
+    n -= sum(int(i) for i in list(n_str))
+    n_str = list(str(n))
+  return n
+print(func3(9))
+print(func3(20))
+print(func3(110))
+print(func3(5674))
+#24
+def func4(n):
+  x = len([i for i in range(1,n+1) if not n % i])
+  return x
+print(func4(15))
+print(func4(12))
+#25
+def func5(n):
+  all_nums = set([0,1,2,3,4,5,6,7,8,9])
+  n = set([int(i) for i in n])
+  n = n.symmetric_difference(all_nums)
+  n = sorted(n)
+  return n
+print(func5([9,8,3,2,2,0,9,7,6,3]))
+#26
+a = [1, 2, 3]
+print(a[0:2])
+print(a[1:3])
+a.remove(2)
+print(a)
+#27
+def ap_gp_sequence(arr):
+  if arr[0]==arr[1]==arr[2]==0:
+    return "Wrong Numbers"
+  else:
+    if arr[1]-arr[0]==arr[2]-arr[1]:
+      n=2*arr[2]-arr[1]
+      return "AP sequence, "+'Next number of the sequence: '+str(n)
+    else:
+      n=arr[2]**2/arr[1]
+      return "GP sequence, " + 'Next number of the sequence:  '+str(n)
+
+print(ap_gp_sequence([1,2,3]))
+print(ap_gp_sequence([2,6,18]))
+print(ap_gp_sequence([0,0,0]))
+#28
+a = int(input('a = '))
+b = int(input('b = '))
+
+def nsd(a, b): # Функція знаходження найбільшого спільного дільника
+    while a*b != 0:
+        if a >= b:
+            a = a % b
+        else:
+            b = b % a
+    return a + b
+#29
+#30
+def rev_number(n):
+  s = 0
+  while True:
+    k = str(n)
+    if k == k[::-1]:
+      break
+    else:
+      m = int(k[::-1])
+      n += m
+      s += 1
+  return n
+
+print(rev_number(1234))
+print(rev_number(1423))
+#31
+def carry_number(x, y):
+    ctr = 0
+    if (x == 0 and y == 0):
+        return 0
+    z = 0
+    for i in reversed(range(10)):
+        z = x % 10 + y % 10 + z
+        if z > 9:
+            z = 1
+        else:
+            z = 0
+        ctr += z
+        x //= 10
+        y //= 10
+
+    if ctr == 0:
+        return "No carry operation."
+    elif ctr == 1:
+        return ctr
+    else:
+        return ctr
+
+
+print(carry_number(786, 457))
+print(carry_number(5, 6))
+#32
+a = [124, 122, 102, 132, 123,110]
+if a[0]>a[1]:
+    a.pop(1)
+else:
+    a.pop(0)
+if  a[2]>a[3]:
+    a.pop(3)
+else:
+    a.pop(2)
+if  a[-2]>a[-1]:
+    a.pop(-1)
+else:
+    a.pop(-2)
+print(a)
+#33
+print("Input two integers(a b): ")
+a,b = map(int,input().split(" "))
+print("Number of digit of a and b.:")
+print(len(str(a+b)))
+
+#34
+print("Input three integers(sides of a triangle)")
+int_num = list(map(int,input().split()))
+x,y,z = sorted(int_num)
+if x**2+y**2==z**2:
+    print('Yes')
+else:
+    print('No')
+#35
+print("Input the value of a, b, c, d, e, f:")
+a, b, c, d, e, f = map(float, input().split())
+n = a*e - b*d
+print("Values of x and y:")
+if n != 0:
+    x = (c*e - b*f) / n
+    y = (a*f - c*d) / n
+    print('{:.3f} {:.3f}'.format(x+0, y+0))
+#36
+def round_n(n):
+    if n % 1000:
+        return (1 + n // 1000) * 1000
+    else:
+        return n
+
+
+def compute_debt(n):
+    if n == 0: return 100000
+    return int(round_n(compute_debt(n - 1) * 1.05))
+
+
+print("Input number of months:")
+result = compute_debt(int(input()))
+print("Amount of debt: ", "$" + str(result).strip())
+#37
+import itertools
+print("Input the number(n):")
+n=int(input())
+result=0
+for (i,j,k) in itertools.product(range(10),range(10),range(10)):
+    result+=(0<=n-(i+j+k)<=9)
+print("Number of combinations:",result)
+#38
+a = 10
+if a <=10:
+    print (1, 2, 3, 4, 5, 6, 7, 8 ,9, 10)
+#41
+a = int(input())
+b = int(input())
+c = a+b
+if c < 80:
+    print(c)
+else:
+    print("Overload")
+#42
+print("Input six integers:")
+nums = list(map(int, input().split()))
+nums.sort()
+nums.reverse()
+print("After sorting the said integers:")
+print(*nums)
+#43
+print("Input x1,y1,x2,y2,x3,y3,xp,yp:")
+x1, y1,x2, y2, x3, y3, x4, y4 = map(float, input().split())
+print('PQ and RS are parallel.' if abs((x2 - x1)*(y4 - y3) - (x4 - x3)*(y2 - y1)) < 1e-10 else 'PQ and RS are not parallel')
+#44
+while True:
+    print("Input number of sequence of numbers you want to input (0 to exit):")
+    n = int(input())
+    if n == 0:
+        break
+    else:
+        A = []
+        Sum = []
+        print("Input numbers:")
+        for i in range(n):
+            A.append(int(input()))
+        Wa = 0
+        for i in range(0,n):
+            Wa += A[i]
+            Sum.append(Wa)
+        for i in range(0 , n):
+            for j in range(0 , i):
+                Num = Sum[i] - Sum[j]
+                Sum.append(Num)
+        print("Maximum sum of the said contiguous subsequence:")
+        print(max(Sum))
+#46
+from datetime import date
+print("Input month and date (separated by a single space):")
+m, d = map(int, input().split())
+weeks = {1:'Monday',2:'Tuesday',3:'Wednesday',4:'Thursday',5:'Friday',6:'Saturday',7:'Sunday'}
+w = date.isoweekday(date(2016, m, d))
+print("Name of the date: ",weeks[w])
+#47
+import collections
+print("Input a text in a line.")
+text_list = list(map(str, input().split()))
+sc = collections.Counter(text_list)
+common_word = sc.most_common()[0][0]
+max_char = ""
+for s in text_list:
+    if len(max_char) < len(s):
+        max_char = s
+print("\nMost frequent text and the word which has the maximum number of letters.")
+print(common_word, max_char)
+#50
+a = ["Python"]
+a.pop(0)
+a.append("Java")
+a.pop(0)
+a.append("Python")
+print(a)
+#51
+print("Input an integer created by 8 numbers from 0 to 9.:")
+num = list(input())
+print("Difference between the largest and the smallest integer from the given integer:")
+print(int("".join(sorted(num,reverse=True))) - int("".join(sorted(num))))
+#54
+while True:
+    print("Input number of straight lines (o to exit): ")
+    n=int(input())
+    if n<=0:
+        break
+    print("Number of regions:")
+    print((n*n+n+2)//2)
+#60
+print("Input a sentence (1024 characters. max.)")
+yy = input()
+yy = yy.replace(",", " ")
+yy = yy.replace(".", " ")
+print("3 to 6 characters length of words:")
+print(*[y for y in yy.split() if 3 <= len(y) <= 6])
