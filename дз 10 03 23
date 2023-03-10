@@ -1,0 +1,55 @@
+def reverse_list(lst, new_lst):
+    lst.reverse()
+    new_lst.append("*--*".join(lst))
+
+new_lst = []
+lst = ['one', 'two', 'three', 'four', 'five']
+reverse_list(lst, new_lst)
+print(new_lst)
+
+
+a = []
+a = open("test.py", "r")
+print(a.read())
+
+import string
+alhabet = string.ascii_lowercase
+empty_list = []
+def func(arg1, arg2):
+    for element in arg1:
+        if element in ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','z']:
+            element = element.upper()
+        print(element)
+
+func(alhabet, empty_list)
+
+list1 = ['Archaeologists uncover sphinx-like statue and shrine in Egypt', True, {123}, (123)]
+empty_list = []
+def process_strings(lst):
+    result = []
+
+    for item in lst:
+        if isinstance(item, str):
+            result.append(item)
+
+    vowels = set(['a', 'e', 'i', 'o', 'u'])
+
+    for i in range(len(result)):
+        s = result[i]
+        new_s = ''
+        for c in s:
+            if c.lower() in vowels:
+                new_s += c
+        result[i] = new_s
+
+def remove_vowels(func):
+    def wrapper(*args, **kwargs):
+        result = func(*args, **kwargs)
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        result = ''.join([char for char in result if char.lower() not in vowels])
+        return result
+    return wrapper
+@remove_vowels
+def say_hello(name):
+    return f'Hello, {name}'
+print(say_hello('Ivan'))
